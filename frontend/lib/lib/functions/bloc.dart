@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-
 enum CatalogState { head, torso, legs, feet }
-
-
+ 
+const String urlhost = "https://6efba428f094.hosting.myjino.ru/";
 class Request {
-  static const login = 'http://localhost:8000/users/login';
-  static const registration = 'http://localhost:8000/users/register';
+  static const login = urlhost + '/users/login';
+  static const registration = urlhost + '/users/register';
 
 
 }

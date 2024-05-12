@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_garderob/colors/garderob_colors.dart';
+import 'package:my_garderob/pages/entry_pages/entrance_page.dart';
 import 'package:my_garderob/pages/room_page.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'main_page.dart';
+
 
 class EntryLoadingPage extends StatefulWidget {
   const EntryLoadingPage({super.key});
@@ -35,7 +36,7 @@ class _EntryLoadingPageState extends State<EntryLoadingPage> {
 //Запускает после того как отрендерися виджет чтобы не выдало ошибки
           WidgetsBinding.instance.addPostFrameCallback((_) {
             Navigator.of(context).push(PageTransition(
-                child: MainPage(),
+                child: EntrancePage(),
                 type: PageTransitionType.fade,
                 duration: Duration(milliseconds: 500)));
           });

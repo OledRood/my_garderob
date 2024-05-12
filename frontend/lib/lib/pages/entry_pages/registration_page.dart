@@ -189,7 +189,6 @@ class _MainPageState extends State<RegistrationPage> {
     http.StreamedResponse response = await request.send();
     print(response.statusCode);
     if (response.statusCode != 201) {
-      print("hello");
       throw "";
     }
     return await response.stream.bytesToString();

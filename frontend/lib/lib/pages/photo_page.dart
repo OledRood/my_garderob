@@ -43,7 +43,7 @@ class _PhotoPageState extends State<PhotoPage> {
 
   @override
   Widget build(BuildContext context) {
-print(widget.bodyPart);
+    print(widget.bodyPart);
     // print(typeClother);
     return Scaffold(
       backgroundColor: GarderobColors.background,
@@ -65,11 +65,8 @@ print(widget.bodyPart);
 
 //TODO CHANGE IN DEBAG
 
-                // child:
-                // Image.file(
-                //   File(imageFile),
-                child: Image.asset(
-                  ImageClother.tShort,
+                child: Image.file(
+                  File(imageFile),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -186,8 +183,8 @@ print(widget.bodyPart);
 //     return dropdownItems;
 //   }
 //Вспомнить тип бодипарта и сделать свитч кайс со списком видов одежды
-
 }
+
 List _chooseTypeClother(bodypart) {
   switch (bodypart) {
     case "Head":

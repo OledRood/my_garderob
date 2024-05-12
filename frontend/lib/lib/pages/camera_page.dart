@@ -14,28 +14,29 @@ import 'package:my_garderob/widgets/back_buttom.dart';
 import '../resources/image_clother.dart';
 
 class CameraMen extends StatefulWidget {
-  final imageIcon;
+  final bodyPart;
 
-  const CameraMen({super.key, required this.imageIcon});
+  const CameraMen({super.key, required this.bodyPart});
 
   @override
   State<CameraMen> createState() => _CameraMenState();
 }
 
 class _CameraMenState extends State<CameraMen> {
-  late String imageIcon;
+  late String bodyPart;
 
   @override
   void initState() {
     super.initState();
-    imageIcon = widget.imageIcon;
+    bodyPart = widget.bodyPart;
   }
 
   XFile? imageFile;
 
   void _onClick(final bool gallery, final String bodyPart) async {
-    double ratioX = 0.0;
-    double ratioY = 0.0;
+
+    double ratioX = 1.0;
+    double ratioY = 1.0;
     switch (bodyPart) {
       case "Head":
         ratioX = 1.5;
@@ -92,27 +93,17 @@ class _CameraMenState extends State<CameraMen> {
                 const SizedBox(height: 27),
                 ButtomChoose(
                   onTap: () {
-                    _onClick(false, _convertToBodyPart(imageIcon));
+                    _onClick(false, bodyPart);
                   },
                   text: "Camera",
                 ),
                 SizedBox(height: 10),
                 ButtomChoose(
                   onTap: () {
-                    _onClick(true, _convertToBodyPart(imageIcon));
+                    _onClick(true, bodyPart);
                   },
                   text: "Galery",
                 ),
-                ButtomChoose(
-                  onTap: () {
-                    Navigator.of((context)).push(MaterialPageRoute(
-                        builder: (context) => PhotoPage(
-                              imageFile: "imageFile",
-                              bodyPart: _convertToBodyPart(ImageIcon),
-                            )));
-                  },
-                  text: "Scip",
-                )
               ],
             ),
           ),
@@ -186,17 +177,3 @@ class ImagePickerService {
   }
 }
 
-String _convertToBodyPart(Image) {
-  switch (ImageIcon) {
-    case ImageClother.iconHat:
-      return "Head";
-    case ImageClother.iconPolo:
-      return "Torso";
-    case ImageClother.iconPants:
-      return "Legs";
-    case ImageClother.iconShoose:
-      return "Feet";
-    default:
-      return "Error";
-  }
-}

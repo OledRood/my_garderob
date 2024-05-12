@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_garderob/pages/entry_pages/entry_loading_page.dart';
-import 'package:my_garderob/pages/entry_pages/main_page.dart';
-import 'package:my_garderob/pages/photo_page.dart';
 import 'package:my_garderob/pages/room_page.dart';
 
 
